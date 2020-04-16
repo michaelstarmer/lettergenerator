@@ -1,0 +1,119 @@
+@layout('templates.layout.default')
+@section('body')
+
+<div style="margin: 0 80px; padding-top: 20px;">
+
+  <div class="header" >
+    <!-- https://www.ntbinfo.no/data/images/00987/776f818b-f8b4-41ff-a496-e8250e26788c.png -->
+    <!-- http://kriminalitetsforebygging.no/wp-content/uploads/2017/11/Politidirektoratet.png -->
+    <img src="http://kriminalitetsforebygging.no/wp-content/uploads/2017/11/Politidirektoratet.png" alt="" height="150" class="margin-center">
+  </div>
+  <table style="margin-top: 60px;" width="100%" border="0" cellpadding="0" cellspacing="0" class="meta-data">
+      <tr>
+        <td height="25">
+          <span class="italic">Din referanse:</span><br/>
+          <span>{{fields.your_reference}}</span>
+        </td>
+        <td height="25">
+          <span class="italic">Vår referanse:</span><br/>
+          <span>{{fields.our_reference}}</span>
+        </td>
+        <td height="25">
+          <span class="italic">Sted, Dato:</span><br/>
+          <span>{{fields.place_data}}</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="main" style="margin-top: 50px;">
+      <h3 style="font-weight: 700;">{{fields.title}}</h3>
+
+      <p>
+        {{{fields.body}}}
+      </p>
+    
+      <!--<p>
+        Viser til 2. gangs behandling av reguleringsplan for Norheim næringspark IV, mottatt her den
+        17.02.2014.
+      </p>
+      <h5>Liten overskrift</h5>
+      <p class="mt-0">
+        Formålet med reguleringsendringen er å legge til rette for næringsvirksomhet.
+      </p>
+      <h5>Liten overskrift</h5>
+      <p class="mt-0">
+        Statens vegvesen hadde følgende merknader ved offentlig ettersyn ved 1. behandling av
+        reguleringsplanforslaget:
+        <ul>
+          <li>Planområdet må utvides inn i Haugesund kommune, og ta med vegareal, rundkjøring
+              og g/s-veg
+          </li>
+          <li>
+            Planen må tilpasses tilstøtende planer.
+          </li>
+          <li>
+            Byggegrense må fremgå av tegnforklaringen.
+          </li>
+          <li>
+            Krav om at Statens vegvesen skal godkjenne teknisk plan
+          </li>
+        </ul>
+      </p>
+      <p class="mt-0">
+        Bortsett fra merknaden angående byggegrense, kan ikke Statens vegvesen se at våre
+        merknader er imøtekommet.
+      </p>
+    -->
+    </div>
+
+    <div class="footer">
+      <p class="footer__top">Med hilsen</p>
+      <p class="footer__bottom">
+        Saksbehandler <br />
+        {{fields.signature}}
+      </p>
+    </div>
+
+</div>
+
+<style>
+  .text-center {
+    text-align: center;
+  }
+  .margin-center {
+    margin: 0 auto;
+  }
+  .header {
+    margin-left: -25px;
+  }
+  .italic {
+    font-style: italic;
+    font-weight: 600;
+  }
+  .meta-data {
+    font-size: 12px;
+  }
+  .meta-data td {
+    width: 25%;
+  }
+  h5 {
+    margin-bottom: 0;
+  }
+  .mt-0 {
+    margin-top: 0;
+  }
+  p, li {
+    font-weight: 100;
+    font-size: 12px;
+  }
+  .footer__top {
+    margin-bottom: 40px !important;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 200px;
+  }
+</style>
+
+@endsection

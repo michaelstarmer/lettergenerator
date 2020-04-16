@@ -1,0 +1,49 @@
+@layout('layouts.master')
+@section('main')
+
+  <div class="container content__block">
+
+    <div class="row">
+
+      <div class="col-12 col-md-3 font-small">
+        <h5>Formattering</h5>
+        <ul>
+          <li><strong>Overskrift:</strong> &lt;h5&gt;Overskrift&lt;/h5&gt;</li>
+          <li><strong>Avsnitt:</strong> &lt;p&gt;Masse tekst her&lt;/p&gt;</li>
+          <li><strong>Liste:</strong> &lt;ul&gt;&lt;li&gt;Liste&lt;li&gt;&lt;/ul&gt;</li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <form class="form-customize" method="POST" action="{{ route('pdf', {templateID}) }}">
+          {{ csrfField() }}
+          @each(field in fields)
+            <div class="form-group">
+              <label for="{{field.name}}">{{field.label}}</label>
+              @if(field.type == 'input')
+              <input type="text" name="{{field.name}}" class="form-control" id="exampleInputEmail1" placeholder="{{field.placeholder}}" value={{field.value}}>
+              @elseif(field.type == 'textarea')
+              <textarea class="form-control" name="{{field.name}}" id="" cols="30" rows="10">
+&lt;h5&gt;Overskrift&lt;/h5&gt;
+&lt;p>
+  Statens vegvesen hadde følgende merknader ved offentlig ettersyn ved 1. behandling av
+  reguleringsplanforslaget:
+  &lt;ul&gt;
+    &lt;li&gt;Liste 1&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/p&gt;
+              </textarea>
+              @endif
+            </div>
+          @endeach
+          
+          <button type="submit" class="btn btn-primary">MAKE F4KE hax0r pdf</button>
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+@endsection

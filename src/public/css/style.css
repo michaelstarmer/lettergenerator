@@ -1,0 +1,64 @@
+.content__block {
+  width: 70%;
+  background: #fff;
+  padding: 2em;
+  margin: 0 auto;
+  min-height: 300px;
+  position: relative;
+  top: 100px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+}
+
+.landing {
+
+}
+
+
+
+.c-card__content {
+  text-transform: capitalize;
+  border: 1px solid #888;
+}
+
+.c-card {
+  text-decoration: none;
+}
+
+.c-card__title {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-card .btn {
+  border-radius: 0;
+}
+
+.download {
+  display: flex;
+  justify-content: space-between;
+}
+
+.download a {
+  display: inline-block;
+  width: 40%;
+}
+
+form.form-customize {
+
+}
+
+.form-control {
+  border: 1px solid #000 !important;
+}
+
+.font-small {
+  font-size: 14px;
+}

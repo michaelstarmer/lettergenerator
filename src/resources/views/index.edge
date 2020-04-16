@@ -1,0 +1,35 @@
+@layout('layouts.master')
+@section('main')
+
+  <div class="container content__block landing">
+    <h1 class="text-center mb-5">Velg en mal</h1>
+
+    <div class="row">
+
+
+      @each(template in templates)
+      <div class="col-12 col-md-4 c-card">
+        
+        <div class="c-card__content">
+          <div class="c-card__title">
+            <h3>{{template.name}}</h3>
+          </div>
+          <div class="row">
+            <div class="col-6 pr-0">
+              <a href="{{route('fill_template', {templateID: template.id})}}" class="btn btn-success btn-block">Bruk</a>
+            </div>
+            <div class="col-6 pl-0">
+              <a href="{{ route('show_template', {templateID: template.id}) }}" class="btn btn-secondary btn-block">Preview</a>
+            </div>
+            
+          </div>
+        </div>
+      
+      </div>
+      @endeach
+
+    </div>
+
+  </div>
+
+@endsection

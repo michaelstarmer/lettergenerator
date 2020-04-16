@@ -1,0 +1,36 @@
+@layout('layouts.master')
+@section('main')
+
+  <div class="container content__block">
+
+    @if(url)
+    
+      <h1 class="text-center">Generering fullført</h1>
+
+      <div class="row">
+        <div class="col-12 text-center my-4">
+          <p>Se PDF ved å klikke på knappen.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 offset-md-4 download">
+          <a href="{{url}}" class="btn btn-success">Se PDF</a>
+          <a href="{{url}}" class="btn btn-danger">Last ned PDF</a>
+        </div>
+      </div>
+    
+    @else
+      <h1 class="text-center">Noe gikk galt</h1>
+
+      <div class="row">
+        <div class="col-12 text-center my-4">
+          <p>Prøv igjen senere.</p>
+        </div>
+      </div>
+    @endif
+
+
+  </div>
+
+@endsection
